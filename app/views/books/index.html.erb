@@ -18,3 +18,27 @@
   </div>
 
 <% end %>
+
+<h2>Books</h2>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th clspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <th></th>
+          <th><%= book.title %></th>
+          <th><%= book.body %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
