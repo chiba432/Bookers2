@@ -2,6 +2,8 @@
 <div>
 	<h1>Editing Book</h1>
 
+	<%= render 'layouts/error_messages', book: @book %>
+
 	<%= form_for(@book) do |f| %>
 
 	<label>Title</label>
