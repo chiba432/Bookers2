@@ -4,7 +4,7 @@
 
 <h2>New book</h2>
 
-<%= form_for(@book) do |f| %>
+<%= form_for(@newbook) do |f| %>
 
   <div>
     <label>Title</label>
@@ -28,10 +28,18 @@
   <table>
     <tbody>
         <tr>
-          <td><%= link_to @books.title, book_path %></td>
-          <td><%= @books.body %></td>
-          <td><%= link_to "Edit", edit_book_path(@books) %></td>
-          <td><%= link_to "Destroy", book_path(@books), method: :delete %></td>
+          <td><%= link_to @book.title, book_path(@book) %></td>
+          <td><%= @book.body %></td>
+          <td>
+            <% if @book.user == current_user %>
+              <%= link_to "Edit", edit_book_path(@book) %>
+            <% end %>
+          </td>
+          <td>
+            <% if @book.user == current_user %>
+              <%= link_to "Destroy", book_path(@book), method: :delete %>
+            <% end %>
+          </td>
         </tr>
     </tbody>
   </table>

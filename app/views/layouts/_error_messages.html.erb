@@ -1,11 +1,11 @@
 <div>
 
-<% if book.errors.any? %>
+<% if model.errors.any? %>
     <div>
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this obj from being saved:</h2>
+      <h2><%= pluralize(model.errors.count, "error") %> prohibited this obj from being saved:</h2>
 
       <ul>
-        <% book.errors.full_messages.each do |message| %>
+        <% model.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
